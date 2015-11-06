@@ -1,10 +1,10 @@
-<p class="lead">Thank you for placing your order with {{ shop_name }}!</p>
-<p class="lead">This email is to confirm your recent order.</p>
-<p>Date {{ date | date: "%m/%d/%Y" }}</p>
+<p class="lead">Danke für deine Bestellung bei {{ shop_name }}!</p>
+<p class="lead">dies ist deine Bestellbestätigung.</p>
+<p>Date {{ date | date: "%d/%m/%Y" }}</p>
 
 {% if requires_shipping %}
 <p>
-  <b>Shipping address</b><br />
+  <b>Lieferadresse</b><br />
   {{ shipping_address.name }}<br />
   {{ shipping_address.address1 }}<br />
   {% if shipping_address.address2 != nil %}
@@ -17,7 +17,7 @@
 {% endif %}
 
 <p>
-  <b>Billing address</b><br />
+  <b>Rechnungsadresse</b><br />
   {{ billing_address.name }}<br />
   {{ billing_address.address1 }}<br />
   {% if billing_address.address2 != nil %}
@@ -35,13 +35,13 @@
       <th>
       </th>
       <th class="product-description">
-        Description
+        Artikel
       </th>
       <th>
-        Qty
+        Stk
       </th>
       <th>
-        Price
+        Preis
       </th>
     </tr>
   </thead>
@@ -63,7 +63,7 @@
         {{ line.quantity }} 
       </td>
       <td class="price">
-        {{ line.price | money }} each
+        {{ line.price | money }}
       </td>
     </tr>
   {% endfor %}
@@ -72,24 +72,24 @@
 
 <div class="order-total-costs">
   {% if discounts %}
-    <p>Discounts: {{ discounts_savings | money_with_currency }}</p>
+    <p>Rabatt: {{ discounts_savings | money_with_currency }}</p>
   {% endif %}
 
-  <p>Subtotal: {{ subtotal_price | money_with_currency }}</p>
+  <p>Zusammenfassung: {{ subtotal_price | money_with_currency }}</p>
 
   {% for tax_line in tax_lines %}
     <p>{{ tax_line.title }}: {{ tax_line.price | money_with_currency }}</p>
   {% endfor %}
 
   {% if requires_shipping %}
-    <p>Shipping: {{ shipping_price | money_with_currency }}</p>
+    <p>Versandkosten: {{ shipping_price | money_with_currency }}</p>
   {% endif %}
 
-  <p><strong>Total: {{ total_price | money_with_currency }}</strong></p>
+  <p><strong>Summe (inklusive 19% Mwst): {{ total_price | money_with_currency }}</strong></p>
 </div>
 
 <p class="contacts-for-questions">
   <em>
-    If you have questions about your order, please call <strong>{{ shop.phone | prepend: '+' }}</strong> or send a message to <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
+    Falls du fragen zu deiner Bestellung hast, ruf uns an <strong>{{ shop.phone | prepend: '+' }}</strong> oder schreibe uns <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
   </em>
 </p>
