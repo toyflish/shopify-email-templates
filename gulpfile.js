@@ -12,8 +12,7 @@ var paths = {
 };
 
 gulp.task('stylesheets', function() {
-  return gulp.src(paths.stylesheets)
-    .pipe( sass({ style: 'nested', bundleExec: true, precision: 7 }) )
+  return sass(paths.stylesheets, { style: 'nested', bundleExec: true, precision: 7 })
     .pipe( gulp.dest('./') )
 });
 
