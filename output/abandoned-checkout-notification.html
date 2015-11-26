@@ -24,8 +24,7 @@
                           <table class="twelve columns" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding: 0; text-align: left; vertical-align: top; width: 580px;">
                             <tr class="b-header" style="padding: 0; text-align: left; vertical-align: top;">
                               <td class="six sub-columns" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 10px; text-align: left; vertical-align: top; width: 50%; word-break: break-word;">
-                                <!-- {{ 'logo.png' | asset_url | img_tag }} -->
-                                <img src="http://placehold.it/350x150" alt="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
+                                <img src="{{ 'logo.png' | asset_url }}" class="logo" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
                               </td>
                               <td class="six sub-columns last" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 0px; text-align: right; vertical-align: middle; width: 50%; word-break: break-word;">
                               </td>
@@ -55,10 +54,10 @@
                           <tr style="padding: 0; text-align: left; vertical-align: top;">
                             <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0px 0px 10px; text-align: left; vertical-align: top; word-break: break-word;">
                               <!-- Email Content -->
-                              <p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Hey{% if billing_address.name %} {{ billing_address.name }}{% endif %},</p>
-<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Your shopping cart at {{ shop_name }} has been reserved and is waiting for your return!</p>
+                              <p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Hey {% if billing_address.name %} {{ billing_address.name }}{% endif %},</p>
+<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Dein Warenkorb bei {{ shop_name }} is noch gefüllt und wartet dass Du wiederkommst!</p>
 
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">In your cart, you left:</p>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Im Warenkorb sind noch:</p>
 <ul>
   {% for line in line_items %}
   <li>
@@ -66,11 +65,10 @@
   </li>
   {% endfor %}
 </ul>
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">But it's not too late! To complete your purchase, click this link:</p>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Aber es ist noch nicht zu spät! Um die Bestellung abzuschließen klicke diesen Link:</p>
 <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">{{ url }}</p>
 
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Thanks for shopping!<br>
-{{ shop_name }}</p>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Danke und viel Spaß beim Shoppen!</p>
 
 
                             </td>

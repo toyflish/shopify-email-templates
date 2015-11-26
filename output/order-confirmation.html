@@ -24,8 +24,7 @@
                           <table class="twelve columns" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding: 0; text-align: left; vertical-align: top; width: 580px;">
                             <tr class="b-header" style="padding: 0; text-align: left; vertical-align: top;">
                               <td class="six sub-columns" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 10px; text-align: left; vertical-align: top; width: 50%; word-break: break-word;">
-                                <!-- {{ 'logo.png' | asset_url | img_tag }} -->
-                                <img src="http://placehold.it/350x150" alt="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
+                                <img src="{{ 'logo.png' | asset_url }}" class="logo" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
                               </td>
                               <td class="six sub-columns last" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 0px; text-align: right; vertical-align: middle; width: 50%; word-break: break-word;">
                               </td>
@@ -55,13 +54,13 @@
                           <tr style="padding: 0; text-align: left; vertical-align: top;">
                             <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0px 0px 10px; text-align: left; vertical-align: top; word-break: break-word;">
                               <!-- Email Content -->
-                              <p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Thank you for placing your order with {{ shop_name }}!</p>
-<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">This email is to confirm your recent order.</p>
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Date {{ date | date: "%m/%d/%Y" }}</p>
+                              <p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Danke für deine Bestellung bei {{ shop_name }}!</p>
+<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">dies ist deine Bestellbestätigung.</p>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Date {{ date | date: "%d/%m/%Y" }}</p>
 
 {% if requires_shipping %}
 <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">
-  <b>Shipping address</b><br>
+  <b>Lieferadresse</b><br>
   {{ shipping_address.name }}<br>
   {{ shipping_address.address1 }}<br>
   {% if shipping_address.address2 != nil %}
@@ -74,7 +73,7 @@
 {% endif %}
 
 <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">
-  <b>Billing address</b><br>
+  <b>Rechnungsadresse</b><br>
   {{ billing_address.name }}<br>
   {{ billing_address.address1 }}<br>
   {% if billing_address.address2 != nil %}
@@ -92,13 +91,13 @@
       <th style="text-align: center;">
       </th>
       <th class="product-description" style="text-align: left;">
-        Description
+        Artikel
       </th>
       <th style="text-align: center;">
-        Qty
+        Stk
       </th>
       <th style="text-align: center;">
-        Price
+        Preis
       </th>
     </tr>
   </thead>
@@ -120,7 +119,7 @@
         {{ line.quantity }} 
       </td>
       <td class="price" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0px 0px 10px; padding-top: 10px; text-align: center; vertical-align: middle; word-break: break-word;">
-        {{ line.price | money }} each
+        {{ line.price | money }}
       </td>
     </tr>
   {% endfor %}
@@ -129,25 +128,25 @@
 
 <div class="order-total-costs">
   {% if discounts %}
-    <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Discounts: {{ discounts_savings | money_with_currency }}</p>
+    <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Rabatt: {{ discounts_savings | money_with_currency }}</p>
   {% endif %}
 
-  <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Subtotal: {{ subtotal_price | money_with_currency }}</p>
+  <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Zusammenfassung: {{ subtotal_price | money_with_currency }}</p>
 
   {% for tax_line in tax_lines %}
     <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">{{ tax_line.title }}: {{ tax_line.price | money_with_currency }}</p>
   {% endfor %}
 
   {% if requires_shipping %}
-    <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Shipping: {{ shipping_price | money_with_currency }}</p>
+    <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Versandkosten: {{ shipping_price | money_with_currency }}</p>
   {% endif %}
 
-  <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;"><strong>Total: {{ total_price | money_with_currency }}</strong></p>
+  <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;"><strong>Summe (inklusive 19% Mwst): {{ total_price | money_with_currency }}</strong></p>
 </div>
 
 <p class="contacts-for-questions" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; margin-top: 1em; padding: 0; text-align: left;">
   <em>
-    If you have questions about your order, please call <strong>{{ shop.phone | prepend: '+' }}</strong> or send a message to <a href="mailto:{{ shop.email }}" style="color: #2ba6cb; text-decoration: none;">{{ shop.email }}</a>
+    Falls du fragen zu deiner Bestellung hast, ruf uns an <strong>{{ shop.phone | prepend: '+' }}</strong> oder schreibe uns <a href="mailto:{{ shop.email }}" style="color: #2ba6cb; text-decoration: none;">{{ shop.email }}</a>
   </em>
 </p>
 

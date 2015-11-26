@@ -24,8 +24,7 @@
                           <table class="twelve columns" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding: 0; text-align: left; vertical-align: top; width: 580px;">
                             <tr class="b-header" style="padding: 0; text-align: left; vertical-align: top;">
                               <td class="six sub-columns" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 10px; text-align: left; vertical-align: top; width: 50%; word-break: break-word;">
-                                <!-- {{ 'logo.png' | asset_url | img_tag }} -->
-                                <img src="http://placehold.it/350x150" alt="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
+                                <img src="{{ 'logo.png' | asset_url }}" class="logo" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
                               </td>
                               <td class="six sub-columns last" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 0px; text-align: right; vertical-align: middle; width: 50%; word-break: break-word;">
                               </td>
@@ -56,16 +55,16 @@
                             <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0px 0px 10px; text-align: left; vertical-align: top; word-break: break-word;">
                               <!-- Email Content -->
                               {% if billing_address.name %}
-<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Dear {{ billing_address.name }}, </p>
+<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Hallo {{ billing_address.name }}, </p>
 {% endif %}
 
-<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Your order {{ name }} was cancelled {% case cancel_reason %}{% when 'customer' %}at your request.{% when 'inventory' %}because we did not have enough stock to fulfill your order.{% when 'fraud' %}because we suspect it is fraudulent.{% when 'other' %}due to unforseen circumstances.{% endcase %}</p>
+<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Deine Order {{ name }} wurde storniert {% case cancel_reason %}{% when 'customer' %}in Deinem Auftrag.{% when 'inventory' %}weil wir leider einen Bestandsfehler hatten und die Order nicht ausführen können.{% when 'fraud' %}weil wir von einem Betrug ausgehen.{% when 'other' %}wegen unerklärlichen Umständen.{% endcase %}</p>
 
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">{% if financial_status == 'voided' %}Your payment has been voided.{% elsif financial_status == 'credited' %}Your payment has been refunded.{% endif %}</p>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">{% if financial_status == 'voided' %}Deine Zahlung wurde zurückgewiesen.{% elsif financial_status == 'credited' %}Deine Zahlung wurde zurückgesandt.{% endif %}</p>
 
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Please reply to this email if you have any questions or concerns.</p>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Bei Fragen oder Unklarheiten antworte bitte direkt auf diese Email.</p>
 
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Sincerely,<br>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Danke,<br>
 {{shop_name}}</p>
 
 

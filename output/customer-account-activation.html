@@ -24,8 +24,7 @@
                           <table class="twelve columns" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding: 0; text-align: left; vertical-align: top; width: 580px;">
                             <tr class="b-header" style="padding: 0; text-align: left; vertical-align: top;">
                               <td class="six sub-columns" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 10px; text-align: left; vertical-align: top; width: 50%; word-break: break-word;">
-                                <!-- {{ 'logo.png' | asset_url | img_tag }} -->
-                                <img src="http://placehold.it/350x150" alt="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
+                                <img src="{{ 'logo.png' | asset_url }}" class="logo" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
                               </td>
                               <td class="six sub-columns last" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 0px; text-align: right; vertical-align: middle; width: 50%; word-break: break-word;">
                               </td>
@@ -56,12 +55,11 @@
                             <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0px 0px 10px; text-align: left; vertical-align: top; word-break: break-word;">
                               <!-- Email Content -->
                               {% if customer.name %}
-<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Dear {{ customer.name }},</p>
+<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Hallo {{ customer.name }},</p>
 {% endif %}
-<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">An account has been created for you at the shop {{ shop.name }}.</p>
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Please visit this url to activate your account and set your password. </p>
+<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Es wurde ein Account bei {{ shop.name }} für dich erstellt.</p>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Gehe zum Shop um deinen Account zu aktivieren und erstelle Dein Passwort. </p>
 <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">{{ customer.account_activation_url }}</p>
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">If the account was created in error, you can visit the link above and select "Decline" to decline this invitation.</p>
 
 
                             </td>

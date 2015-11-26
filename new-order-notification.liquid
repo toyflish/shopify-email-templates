@@ -1,18 +1,18 @@
 <p class="lead">{{ shop_name }},</p>
-<p class="lead">{{ billing_address.name }} placed a new order with you today ({{ date | date: "%b %d %I:%M%p" }}).</p>
+<p class="lead">{{ billing_address.name }} hat im Onlineshop bestellt ({{ date | date: "%b %d %I:%M%p" }}).</p>
 
-<h4>Payment method:</h4>
+<h4>Zahlungsweg:</h4>
 <p>{{ gateway }}</p>
 
 {% if requires_shipping %}
-<h4>Delivery method:</h4>
+<h4>Versandart:</h4>
 <p>
 {% for shipping_method in shipping_methods %}
   {{ shipping_method.title }}{% unless forloop.last %}<br />{% endunless %}
 {% endfor %}
 </p>
 
-<h4>Shipping address:</h4>
+<h4>Lieferadresse:</h4>
 <p>
   {{ shipping_address.name }}<br />
   {{ shipping_address.street }}<br />
@@ -29,13 +29,13 @@
       <th>
       </th>
       <th class="product-description">
-        Description
+        Beschreibung
       </th>
       <th>
-        Qty
+        Stk
       </th>
       <th>
-        Price
+        Preis
       </th>
     </tr>
   </thead>
@@ -64,5 +64,5 @@
   </tbody>
 </table>
 
-<p><a href="{{ shop.url }}/admin/orders/{{ id }}">View order {{order_name}}</a></p>
+<p><a href="{{ shop.url }}/admin/orders/{{ id }}">Zeige Order {{order_name}}</a></p>
 

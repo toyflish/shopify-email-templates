@@ -24,8 +24,7 @@
                           <table class="twelve columns" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding: 0; text-align: left; vertical-align: top; width: 580px;">
                             <tr class="b-header" style="padding: 0; text-align: left; vertical-align: top;">
                               <td class="six sub-columns" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 10px; text-align: left; vertical-align: top; width: 50%; word-break: break-word;">
-                                <!-- {{ 'logo.png' | asset_url | img_tag }} -->
-                                <img src="http://placehold.it/350x150" alt="" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
+                                <img src="{{ 'logo.png' | asset_url }}" class="logo" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
                               </td>
                               <td class="six sub-columns last" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 0px; text-align: right; vertical-align: middle; width: 50%; word-break: break-word;">
                               </td>
@@ -56,10 +55,10 @@
                             <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0px 0px 10px; text-align: left; vertical-align: top; word-break: break-word;">
                               <!-- Email Content -->
                               {% if billing_address.name %}
-<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Dear {{ billing_address.name }},</p>
+<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Hallo {{ billing_address.name }},</p>
 {% endif %}
 
-<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">The following shipped items from order {{ name }} have been updated with new shipping information:</p>
+<p class="lead" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: normal; line-height: 21px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Für folgende Teile Deiner Order {{ name }} gibt es neue Versandinformationen:</p>
 
 <table class="products-table" style="border-collapse: collapse; border-spacing: 0; margin-bottom: 1em; padding: 0; text-align: left; vertical-align: top; width: 100%;">
   <thead>
@@ -67,10 +66,10 @@
       <th style="text-align: center;">
       </th>
       <th class="product-description" style="text-align: left;">
-        Description
+        Beschreibung
       </th>
       <th style="text-align: center;">
-        Qty
+        Stk
       </th>
     </tr>
   </thead>
@@ -91,9 +90,7 @@
   </tbody>
 </table>
 
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">They are being shipped{% if fulfillment.tracking_company %} via {{ fulfillment.tracking_company }}{% endif %} with tracking number {{ fulfillment.tracking_number }}. <a href="{{ fulfillment.tracking_url }}" style="color: #2ba6cb; text-decoration: none;">Click here to see the status of this shipment</a>.</p>
-
-<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Please allow some time for the status of the shipment to correctly display at the above address.</p>
+<p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">Sie wurden versand {% if fulfillment.tracking_company %} mit {{ fulfillment.tracking_company }}{% endif %} mit Tracking Nummer {{ fulfillment.tracking_number }}. <a href="{{ fulfillment.tracking_url }}" style="color: #2ba6cb; text-decoration: none;">Klicke hier um den Status einzusehen</a>.</p>
 
 
                             </td>

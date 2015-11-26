@@ -1,7 +1,7 @@
-<p class="lead">Hey{% if billing_address.name %} {{ billing_address.name }}{% endif %},</p>
-<p class="lead">Your shopping cart at {{ shop_name }} has been reserved and is waiting for your return!</p>
+<p class="lead">Hey {% if billing_address.name %} {{ billing_address.name }}{% endif %},</p>
+<p class="lead">Dein Warenkorb bei {{ shop_name }} is noch gefüllt und wartet dass Du wiederkommst!</p>
 
-<p>In your cart, you left:</p>
+<p>Im Warenkorb sind noch:</p>
 <ul>
   {% for line in line_items %}
   <li>
@@ -9,9 +9,8 @@
   </li>
   {% endfor %}
 </ul>
-<p>But it's not too late! To complete your purchase, click this link:</p>
+<p>Aber es ist noch nicht zu spät! Um die Bestellung abzuschließen klicke diesen Link:</p>
 <p>{{ url }}</p>
 
-<p>Thanks for shopping!<br />
-{{ shop_name }}</p>
+<p>Danke und viel Spaß beim Shoppen!</p>
 

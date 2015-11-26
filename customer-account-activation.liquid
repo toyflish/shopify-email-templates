@@ -1,8 +1,7 @@
 {% if customer.name %}
-<p class="lead">Dear {{ customer.name }},</p>
+<p class="lead">Hallo {{ customer.name }},</p>
 {% endif %}
-<p class="lead">An account has been created for you at the shop {{ shop.name }}.</p>
-<p>Please visit this url to activate your account and set your password. </p>
+<p class="lead">Es wurde ein Account bei {{ shop.name }} für dich erstellt.</p>
+<p>Gehe zum Shop um deinen Account zu aktivieren und erstelle Dein Passwort. </p>
 <p>{{ customer.account_activation_url }}</p>
-<p>If the account was created in error, you can visit the link above and select "Decline" to decline this invitation.</p>
 
