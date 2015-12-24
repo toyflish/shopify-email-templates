@@ -24,7 +24,9 @@
                           <table class="twelve columns" style="border-collapse: collapse; border-spacing: 0; margin: 0 auto; padding: 0; text-align: left; vertical-align: top; width: 580px;">
                             <tr class="b-header" style="padding: 0; text-align: left; vertical-align: top;">
                               <td class="six sub-columns" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 10px; text-align: left; vertical-align: top; width: 50%; word-break: break-word;">
-                                <img src="{{ 'logo.png' | asset_url }}" class="logo" style="-ms-interpolation-mode: bicubic; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
+                                <a href="http://shishabrand.com" style="color: #2ba6cb; text-decoration: none;">
+                                  <img src="{{ 'logo.png' | asset_url }}" class="logo" style="-ms-interpolation-mode: bicubic; border: none; clear: both; display: block; float: left; max-width: 100%; outline: none; text-decoration: none; width: auto;">
+                                </a>
                               </td>
                               <td class="six sub-columns last" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; min-width: 0px; padding: 0px 0px 10px; padding-right: 0px; text-align: right; vertical-align: middle; width: 50%; word-break: break-word;">
                               </td>
@@ -143,12 +145,50 @@
 
   <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;"><strong>Summe (inklusive 19% Mwst): {{ total_price | money_with_currency }}</strong></p>
 </div>
+<div style="margin:50px 0px">
+  <h5 style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: bold; line-height: 1.3; margin: 0; padding: 0; text-align: left; word-break: normal;">Falls du Vorkasse Zahlung per Überweisung gewählt hast, verwende bitte folgendes Konto:</h5>
+  <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">
+  Kontoinhaber: SHISHA GmbH<br>
+  KontoNr/IBAN: DE92210501701400108435<br>
+  Bank: Förde Sparkasse<br>
+  BIC/SWIFT: NOLADE21KIE<br>
+<br>
+  Verwendungszweck: Bestellnummer {{name}}<br>
 
+  </p>
+</div>
 <p class="contacts-for-questions" style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; margin-top: 1em; padding: 0; text-align: left;">
   <em>
-    Falls du fragen zu deiner Bestellung hast, ruf uns an <strong>{{ shop.phone | prepend: '+' }}</strong> oder schreibe uns <a href="mailto:{{ shop.email }}" style="color: #2ba6cb; text-decoration: none;">{{ shop.email }}</a>
+    Falls du Fragen zu deiner Bestellung hast, ruf uns an <strong>{{ shop.phone | prepend: '+' }}</strong> oder schreibe uns <a href="mailto:{{ shop.email }}" style="color: #2ba6cb; text-decoration: none;">{{ shop.email }}</a>
   </em>
 </p>
+
+                            </td>
+                            <td class="expander" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0; text-align: left; vertical-align: top; visibility: hidden; width: 0px; word-break: break-word;"></td>
+                          </tr>
+                          <tr style="padding: 0; text-align: left; vertical-align: top;">
+                            <td style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0px 0px 10px; text-align: center; vertical-align: top; word-break: break-word;">
+                              <!-- Email Footer -->
+                              <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">
+                                SHISHA GmbH<br>
+                                Legienstrasse 40<br>
+                                24103 Kiel <br>
+                                Tel: 0431 22188940<br>
+                                Fax: 0431 22188947<br>
+                                <a href="mailto:info@shishabrand.com" style="color: #2ba6cb; text-decoration: none;"> info@shishabrand.com </a>
+                              </p>
+                              <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">
+                                Geschäftsführer:<br>
+                                Christoph Schwarz<br>Kai Rautenberg
+                              </p>
+                              <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;">
+                                Sitz der Gesellschaft: Kiel<br>
+                                Handelsregister: HRB 4691 KI<br>
+                                Amtsgericht Kiel<br>
+                                Ust.Id.Nr.: DE 193 296 444
+                              </p>
+                              <p style="color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; line-height: 19px; margin: 0; margin-bottom: 10px; padding: 0; text-align: left;"><a href="http://shishabrand.com/pages/agb#datenschutz" style="color: #2ba6cb; text-decoration: none;"> Datenschutzerklärung </a></p>
+
 
                             </td>
                             <td class="expander" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; font-weight: normal; hyphens: auto; line-height: 19px; margin: 0; padding: 0; text-align: left; vertical-align: top; visibility: hidden; width: 0px; word-break: break-word;"></td>

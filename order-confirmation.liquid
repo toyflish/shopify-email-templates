@@ -87,9 +87,20 @@
 
   <p><strong>Summe (inklusive 19% Mwst): {{ total_price | money_with_currency }}</strong></p>
 </div>
+<div style="margin:50px 0px">
+  <h5>Falls du Vorkasse Zahlung per Überweisung gewählt hast, verwende bitte folgendes Konto:</h5>
+  <p>
+  Kontoinhaber: SHISHA GmbH<br>
+  KontoNr/IBAN: DE92210501701400108435<br>
+  Bank: Förde Sparkasse<br>
+  BIC/SWIFT: NOLADE21KIE<br>
+<br>
+  Verwendungszweck: Bestellnummer {{name}}<br>
 
+  </p>
+</div>
 <p class="contacts-for-questions">
   <em>
-    Falls du fragen zu deiner Bestellung hast, ruf uns an <strong>{{ shop.phone | prepend: '+' }}</strong> oder schreibe uns <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
+    Falls du Fragen zu deiner Bestellung hast, ruf uns an <strong>{{ shop.phone | prepend: '+' }}</strong> oder schreibe uns <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
   </em>
 </p>
